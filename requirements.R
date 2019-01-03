@@ -24,16 +24,4 @@ if(!require(tidyverse)){
   library(tidyverse)
 }
 
-
-# 
-# if(!require(heatmaply)){
-#   install.packages("heatmaply", dependencies = TRUE)
-#   library(heatmaply)
-# }
-# 
-# 
-# if(!require(shinyHeatmaply)){
-#   install.packages("shinyHeatmaply", dependencies = TRUE)
-#   library(shinyHeatmaply)
-# }
-# 
+quit(save="no")
