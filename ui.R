@@ -30,7 +30,7 @@ shinyUI(fluidPage(
         tabPanel("Input and cluster settings",
                  # Input: Select a file ----
                  hr(),
-                 a(href = "https://github.com/mpg-age-bioinformatics/shiny/blob/master/heatmap/heatmap_example.csv", "Example input"),
+                 a(href = "https://github.com/mpg-age-bioinformatics/shiny-heatmap/blob/master/heatmap_example.csv", "Example input"),
                  fileInput("uploaded_file", "Choose File",
                            accept = c("text/csv",
                                       "text/comma-separated-values,text/plain",
