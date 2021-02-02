@@ -1,7 +1,11 @@
-FROM hub.age.mpg.de/bioinformatics/shiny:0.3
+FROM mpgagebioinformatics/shiny:0.4
 
-RUN mkdir -p /srv/shiny-server/heatmap/libs
+RUN apt-get update && apt-get install -y git && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-COPY heatmap.html server.R ui.R libs /srv/shiny-server/heatmap/
+ENV APP="heatmap"
 
-COPY libs/ /srv/shiny-server/heatmap/libs/
+RUN mkdir -p /srv/shiny-server/.git/modules/${APP}/refs/heads/
+
+RUN git clone https://github.com/mpg-age-bioinformatics/shiny-${APP}.git /srv/shiny-server/${APP}
+
+RUN cp /srv/shiny-server/${APP}/.git/refs/heads/master /srv/shiny-server/.git/modules/${APP}/refs/heads/
